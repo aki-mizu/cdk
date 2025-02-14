@@ -36,6 +36,7 @@ jobs:
           brew install --cask docker
           open /Applications/Docker.app
           sleep 10  # Wait for Docker to start
+          mv ~/.docker/config.json ~/.docker/config.json.old; cat ~/.docker/config.json.old | sed /credsStore/d > ~/.docker/config.json; rm ~/.docker/config.json.old
 
       # Step 4: Log in to Docker Hub
       - name: Log in to Docker Hub
