@@ -23,9 +23,9 @@ jobs:
         run: |
           # Fetch all tags from the repository
           git fetch --tags
-          TAG_EXISTS=\$(git tag -l "\${{ inputs.tag }}")
-          if [ -z "\$TAG_EXISTS" ]; then
-            echo "Error: The tag '\${{ inputs.tag }}' does not exist in the repository."
+          TAG_EXISTS=$(git tag -l "${{ inputs.tag }}")
+          if [ -z "$TAG_EXISTS" ]; then
+            echo "Error: The tag '${{ inputs.tag }}' does not exist in the repository."
             exit 1
           fi
         shell: bash
