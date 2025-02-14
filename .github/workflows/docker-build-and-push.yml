@@ -48,7 +48,7 @@ jobs:
       # Step 5: Build the Docker image
       - name: Build Docker image
         run: |
-          ls -l /var/run/docker.sock
+          ln -s ~/.docker/run/docker.sock /var/run/docker.sock
           docker build --platform linux/arm64 -t darlhz/cdk-mintd:\${{ inputs.tag }} .
 
       # Step 6: Push the Docker image to Docker Hub
