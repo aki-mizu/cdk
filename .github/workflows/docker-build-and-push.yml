@@ -40,7 +40,7 @@ jobs:
       # Step 4: Log in to Docker Hub
       - name: Log in to Docker Hub using CLI
         run: |
-         echo ${{ secrets.DOCKER_PASSWORD }} | docker login --username ${{ secrets.DOCKER_USERNAME }} --password-stdin
+         echo ${{ secrets.DOCKER_PASSWORD }} | docker login --username ${{ secrets.DOCKER_USERNAME }} --password-stdin --no-credential-helper
      
       # Step 5: Build the Docker image
       - name: Build Docker image
